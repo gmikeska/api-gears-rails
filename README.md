@@ -14,15 +14,18 @@ sync_attr :email                       # Sets up a mapping between the model att
 pull_endpoint :person                  # specifies which API endpoint is used to pull data
 pull_every 10.minutes                  # limits refresh rate to 10 minutes.
 
-after_api_pull do |data, user|         # callback to run after data is pulled from the server.
+  after_api_pull do |data, user|       # callback to run after data is pulled from the server.
                                        # Each verb (defaults :pull, :push,:create,:read,:update,:destroy) has before and after callbacks
                                        # available. For this api in particular, "email address" is nested deeply in the data structure
                                        # so we use a callback as an opportunity to make it more accessible.
-    data["email"] = data["details"]["1091623166"][0]["address"]
-    user.breeze_data = data            # saving the data in a database column can aid with debugging
-    user.save
-    user.breeze_data                   # Notice that we must return the data at the end of the proc so that it can be used to sync
-end                                    # the attributes we've mapped
+      data["email"] = data["details"]["1091623166"][0]["address"]
+      user.breeze_data = data          # saving the data in a database column can aid with debugging
+      user.save
+      user.breeze_data                 # Notice that we must return the data at the end of the proc so that it can be used to sync
+  end                                  # the attributes we've mapped
+
+  # The rest of the model goes here.
+end
 ```
 
 ## Installation
