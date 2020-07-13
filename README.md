@@ -1,5 +1,5 @@
 # Api::Gears::Rails
-api-gears-rails allows installation of an API client into rails models, to keep data synchronized between a rails model and an API.
+api-gears-rails allows installation of an [ApiGears](https://github.com/gmikeska/api_gears) API client into rails models, to keep data synchronized between a rails model and an API.
 
 ## Usage
 ```ruby
