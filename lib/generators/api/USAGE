@@ -1,0 +1,8 @@
+Description:
+    Generates an api_gears API class
+
+Example:
+    rails generate api_gears_rails:api
+
+    This will create:
+      Model: app/model/page.rb

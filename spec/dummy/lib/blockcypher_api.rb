@@ -20,7 +20,6 @@ class BlockcypherApi < ApiGears
   end
   def request(**args)
     result = super
-    result["balance"] = "%.8f" % (result["balance"].to_f/10000000)
     return result
   end
 end
