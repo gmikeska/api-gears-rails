@@ -24,7 +24,7 @@ pull_every 10.minutes                  # limits refresh rate to 10 minutes.
       user.breeze_data                 # Notice that we must return the data at the end of the proc so that it can be used to sync
   end                                  # the attributes we've mapped
 
-  # The rest of the model goes here.
+  # The rest of the model goes here. To synchronize a model instance, call user.api_pull
 end
 ```
 
