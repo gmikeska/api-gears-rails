@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", "~> 6"
   spec.add_dependency "activerecord","~> 6"
-  spec.add_dependency "activesupport","~> 6"
+  spec.add_dependency "activesupport",">= 6", "< 8"
   spec.add_dependency "api_gears", "~> 1.0"
 
   spec.add_development_dependency "sqlite3"
